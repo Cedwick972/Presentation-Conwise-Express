@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Board - Identité Graphique Conwise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #1e4b77 0%, #3498db 50%, #59b3e6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1e4b77;
+            font-family: 'Space Grotesk', sans-serif;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #59b3e6);
+            border-radius: 2px;
+        }
+
+        /* Palette de couleurs */
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .color-item {
+            text-align: center;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .color-swatch {
+            height: 80px;
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .color-primary { background: #1e4b77; }
+        .color-secondary { background: #3498db; }
+        .color-accent { background: #59b3e6; }
+        .color-light { background: #e3f2fd; }
+        .color-dark { background: #0f172a; }
+        .color-gray { background: #64748b; }
+
+        .color-info {
+            padding: 1rem;
+            background: #f8fafc;
+        }
+
+        .color-name {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.25rem;
+        }
+
+        .color-hex {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-family: 'Monaco', monospace;
+        }
+
+        /* Typographie */
+        .typography-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .font-sample {
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-left: 4px solid #3498db;
+        }
+
+        .font-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e4b77;
+            margin-bottom: 1rem;
+        }
+
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-space {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-preview {
+            margin: 0.5rem 0;
+        }
+
+        .font-preview.large {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .font-preview.medium {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .font-preview.small {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        /* Éléments visuels */
+        .visual-elements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .visual-item {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .gradient-sample {
+            height: 60px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .gradient-1 { background: linear-gradient(135deg, #1e4b77 0%, #3498db 100%); }
+        .gradient-2 { background: linear-gradient(135deg, #3498db 0%, #59b3e6 100%); }
+        .gradient-3 { background: linear-gradient(135deg, #1e4b77 0%, #59b3e6 100%); }
+        .gradient-4 { background: linear-gradient(90deg, #e3f2fd 0%, #59b3e6 100%); }
+
+        /* Style de boutons */
+        .button-styles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #3498db;
+            border: 2px solid #3498db;
+        }
+
+        .btn-secondary:hover {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, #1e4b77 0%, #59b3e6 100%);
+            color: white;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Iconographie */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .icon-item {
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            border: 1px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .icon {
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 0.5rem;
+            background: #3498db;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Réseaux sociaux */
+        .social-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .social-post {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .social-header {
+            background: linear-gradient(135deg, #1e4b77 0%, #59b3e6 100%);
+            color: white;
+            padding: 1rem;
+            font-weight: 600;
+        }
+
+        .social-content {
+            padding: 1.5rem;
+        }
+
+        .social-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1e4b77;
+        }
+
+        .social-content p {
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        .social-cta {
+            background: #e3f2fd;
+            color: #1e4b77;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Guidelines */
+        .guidelines {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .guideline-item {
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-left: 4px solid #3498db;
+        }
+
+        .guideline-title {
+            font-weight: 600;
+            color: #1e4b77;
+            margin-bottom: 0.5rem;
+        }
+
+        .do-dont {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .do, .dont {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .do {
+            background: #dcfce7;
+            border: 1px solid #16a34a;
+            color: #15803d;
+        }
+
+        .dont {
+            background: #fef2f2;
+            border: 1px solid #dc2626;
+            color: #dc2626;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Mood Board Conwise</h1>
+            <p>Identité Graphique & Guidelines de Communication</p>
+        </div>
+
+        <!-- Palette de couleurs -->
+        <div class="section">
+            <h2 class="section-title">🎨 Palette de Couleurs</h2>
+            <div class="color-palette">
+                <div class="color-item">
+                    <div class="color-swatch color-primary"></div>
+                    <div class="color-info">
+                        <div class="color-name">Bleu Corporate</div>
+                        <div class="color-hex">#1e4b77</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch color-secondary"></div>
+                    <div class="color-info">
+                        <div class="color-name">Bleu Principal</div>
+                        <div class="color-hex">#3498db</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch color-accent"></div>
+                    <div class="color-info">
+                        <div class="color-name">Bleu Clair</div>
+                        <div class="color-hex">#59b3e6</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch color-light"></div>
+                    <div class="color-info">
+                        <div class="color-name">Bleu Pastel</div>
+                        <div class="color-hex">#e3f2fd</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch color-dark"></div>
+                    <div class="color-info">
+                        <div class="color-name">Noir Profond</div>
+                        <div class="color-hex">#0f172a</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch color-gray"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gris Neutre</div>
+                        <div class="color-hex">#64748b</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typographie -->
+        <div class="section">
+            <h2 class="section-title">📝 Typographie Recommandée</h2>
+            <div class="typography-grid">
+                <div class="font-sample">
+                    <div class="font-name">Inter - Police Principale</div>
+                    <div class="font-inter">
+                        <div class="font-preview large">Conwise</div>
+                        <div class="font-preview medium">La solution tout-en-un</div>
+                        <div class="font-preview small">Pour les professionnels du transport automobile. Interface claire, moderne et lisible pour tous les supports digitaux.</div>
+                    </div>
+                </div>
+                <div class="font-sample">
+                    <div class="font-name">Space Grotesk - Titres & Logo</div>
+                    <div class="font-space">
+                        <div class="font-preview large">Conwise</div>
+                        <div class="font-preview medium">Innovation Transport</div>
+                        <div class="font-preview small">Police géométrique moderne, parfaite pour les titres et les éléments de branding. Caractère tech et premium.</div>
+                    </div>
+                </div>
+                <div class="font-sample">
+                    <div class="font-name">Poppins - Alternative Marketing</div>
+                    <div class="font-poppins">
+                        <div class="font-preview large">Conwise</div>
+                        <div class="font-preview medium">Révolutionnez vos convoyages</div>
+                        <div class="font-preview small">Police conviviale et accessible, idéale pour le marketing et la communication grand public. Ton chaleureux et professionnel.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Éléments visuels -->
+        <div class="section">
+            <h2 class="section-title">✨ Éléments Visuels & Dégradés</h2>
+            <div class="visual-elements">
+                <div class="visual-item">
+                    <div class="gradient-sample gradient-1"></div>
+                    <strong>Dégradé Corporate</strong>
+                    <p>Pour les interfaces pro et B2B</p>
+                </div>
+                <div class="visual-item">
+                    <div class="gradient-sample gradient-2"></div>
+                    <strong>Dégradé Principal</strong>
+                    <p>Boutons et éléments interactifs</p>
+                </div>
+                <div class="visual-item">
+                    <div class="gradient-sample gradient-3"></div>
+                    <strong>Dégradé Complet</strong>
+                    <p>Heros et sections importantes</p>
+                </div>
+                <div class="visual-item">
+                    <div class="gradient-sample gradient-4"></div>
+                    <strong>Dégradé Subtil</strong>
+                    <p>Arrière-plans et zones délicates</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Styles de boutons -->
+        <div class="section">
+            <h2 class="section-title">🔘 Styles de Boutons</h2>
+            <div class="button-styles">
+                <button class="btn btn-primary">Bouton Principal</button>
+                <button class="btn btn-secondary">Bouton Secondaire</button>
+                <button class="btn btn-gradient">Bouton Premium</button>
+            </div>
+        </div>
+
+        <!-- Iconographie -->
+        <div class="section">
+            <h2 class="section-title">🎯 Style Iconographique</h2>
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <div class="icon">🚗</div>
+                    <small>Transport</small>
+                </div>
+                <div class="icon-item">
+                    <div class="icon">📱</div>
+                    <small>Mobile</small>
+                </div>
+                <div class="icon-item">
+                    <div class="icon">📊</div>
+                    <small>Analytics</small>
+                </div>
+                <div class="icon-item">
+                    <div class="icon">⚡</div>
+                    <small>Rapidité</small>
+                </div>
+                <div class="icon-item">
+                    <div class="icon">🔒</div>
+                    <small>Sécurité</small>
+                </div>
+                <div class="icon-item">
+                    <div class="icon">🌐</div>
+                    <small>Réseau</small>
+                </div>
+            </div>
+            <p style="margin-top: 1rem; color: #64748b; text-align: center;">
+                <strong>Style :</strong> Icônes minimalistes, coins arrondis, style line ou filled selon le contexte. Couleurs principales ou monochrome.
+            </p>
+        </div>
+
+        <!-- Exemples réseaux sociaux -->
+        <div class="section">
+            <h2 class="section-title">📱 Templates Réseaux Sociaux</h2>
+            <div class="social-examples">
+                <div class="social-post">
+                    <div class="social-header">
+                        LinkedIn - Format Pro
+                    </div>
+                    <div class="social-content">
+                        <h3>💡 Astuce Conwise</h3>
+                        <p>Saviez-vous que nos états des lieux digitaux réduisent de 70% le temps administratif ?</p>
+                        <span class="social-cta">#ConvoyageAuto #Innovation</span>
+                    </div>
+                </div>
+                <div class="social-post">
+                    <div class="social-header">
+                        Instagram - Format Visuel
+                    </div>
+                    <div class="social-content">
+                        <h3>🚗 Transform your business</h3>
+                        <p>From manual to digital. See how Conwise revolutionizes vehicle transportation.</p>
+                        <span class="social-cta">Discover More →</span>
+                    </div>
+                </div>
+                <div class="social-post">
+                    <div class="social-header">
+                        Facebook - Format Engagement
+                    </div>
+                    <div class="social-content">
+                        <h3>🎯 Témoignage Client</h3>
+                        <p>"Conwise a transformé notre façon de gérer les convoyages. +35% d'efficacité !"</p>
+                        <span class="social-cta">Lire le témoignage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guidelines d'utilisation -->
+        <div class="section">
+            <h2 class="section-title">📋 Guidelines d'Utilisation</h2>
+            <div class="guidelines">
+                <div class="guideline-item">
+                    <div class="guideline-title">🎨 Couleurs</div>
+                    <p>Utiliser le bleu principal (#3498db) pour les CTA, le bleu corporate (#1e4b77) pour les textes importants.</p>
+                    <div class="do-dont">
+                        <div class="do">✅ Contrastes suffisants</div>
+                        <div class="dont">❌ Trop de couleurs</div>
+                    </div>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-title">📝 Typographie</div>
+                    <p>Inter pour le corps de texte, Space Grotesk pour les titres. Hiérarchie claire des tailles.</p>
+                    <div class="do-dont">
+                        <div class="do">✅ Maximum 3 polices</div>
+                        <div class="dont">❌ Tailles incohérentes</div>
+                    </div>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-title">🖼️ Images</div>
+                    <p>Photos high-tech, véhicules modernes, interfaces clean. Filtres bleus légers acceptés.</p>
+                    <div class="do-dont">
+                        <div class="do">✅ Qualité professionnelle</div>
+                        <div class="dont">❌ Filtres saturés</div>
+                    </div>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-title">📱 Adaptabilité</div>
+                    <p>Design responsive, adaptation mobile-first, cohérence entre tous les supports.</p>
+                    <div class="do-dont">
+                        <div class="do">✅ Tests multi-devices</div>
+                        <div class="dont">❌ Version unique</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tone of Voice -->
+        <div class="section">
+            <h2 class="section-title">🗣️ Tone of Voice & Messaging</h2>
+            <div class="guidelines">
+                <div class="guideline-item">
+                    <div class="guideline-title">💼 B2B - Professionnel</div>
+                    <p><strong>Ton :</strong> Expert, rassurant, efficace<br>
+                    <strong>Exemple :</strong> "Optimisez vos opérations de convoyage avec Conwise"</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-title">🚀 Innovation</div>
+                    <p><strong>Ton :</strong> Moderne, avant-gardiste, tech<br>
+                    <strong>Exemple :</strong> "L'avenir du convoyage automobile commence ici"</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-title">🤝 Humain</div>
+                    <p><strong>Ton :</strong> Accessible, bienveillant, proche<br>
+                    <strong>Exemple :</strong> "Nous simplifions votre quotidien professionnel"</p>
+                </div>
+                <div class="guideline-item">
+                    <div class="guideline-title">📈 Résultats</div>
+                    <p><strong>Ton :</strong> Factuel, prouvé, mesurable<br>
+                    <strong>Exemple :</strong> "70% de temps administratif en moins, prouvé par nos clients"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
